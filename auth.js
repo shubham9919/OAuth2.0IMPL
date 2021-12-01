@@ -8,7 +8,7 @@ const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
 passport.use(new GoogleStrategy({
     clientID:     GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "ec2-54-159-151-187.compute-1.amazonaws.com/google/callback", // ------your callbackurl for oauth token from google http://localhost:5000/google/callback
+    callbackURL: process.env.CALLBACK_URL, // ------your callbackurl for oauth token from google http://localhost:5000/google/callback
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {

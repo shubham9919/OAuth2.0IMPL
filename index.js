@@ -24,6 +24,7 @@ app.use(passport.session());
 
 
 app.get("/login", (req, res) => {
+    // res.redirect("/auth/google")
     res.send('<a href= "/auth/google">Auth with google</a>')
 })
 
