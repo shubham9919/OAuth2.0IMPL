@@ -14,15 +14,24 @@ passport.use(new GoogleStrategy({
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {
-    //   console.log(profile)
+
       const STORE_USERDETAILS_RESPONSE = new StoreUserDetails().storeUser(profile)
-      // console.log(STORE_USERDETAILS_RESPONSE)
+
+      /**
+       *  This done method actually means we are ready for our next step.. 
+       * In this case, the next step is to serialize the user for session management 
+       * 1st param in done is error scenariao --> In our case we are passing null in case of error
+       * 
+       */
+      
       return done(null, profile);
   }
 ));
 
+/** */
 
 passport.serializeUser(function(user, done){
+    /** The next stage of serializeUser is deserializeUser */
     done(null, user)
 })
 
