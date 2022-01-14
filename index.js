@@ -35,7 +35,7 @@ function loggedIn(req, res, next) {
 
 const app = express()
 app.use(cors({
-    origin: "http://ec2-3-88-39-229.compute-1.amazonaws.com:3000",
+    origin: "http://ec2-3-82-206-27.compute-1.amazonaws.com:3000",
     // origin: "http://localhost:8000",
     credentials: true
 }))
